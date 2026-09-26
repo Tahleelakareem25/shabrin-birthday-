@@ -28,7 +28,7 @@ function renderQuestion(){
   let html=`<div class="question">${q[1]}</div>`;
 
   if(q[2]){
-    html+=`<div class="answers">${q[2].map(a=>`<button type="button" class="answer ${selectedAnswer===a?'selected':''}" onclick="chooseAnswer(${JSON.stringify(a)})">${a}</button>`).join('')}</div>`;
+    html+=`<div class="answers">${q[2].map(a=>`<button type="button" class="answer ${selectedAnswer===a?'selected':''}" onclick='chooseAnswer(${JSON.stringify(a)})'>${a}</button>`).join('')}</div>`;
     html+=`<button id="nextBtn" class="btn" style="margin-top:18px;opacity:${selectedAnswer?'1':'.5'}" onclick="nextQuestion()" ${selectedAnswer?'':'disabled'}>${current===questions.length-1?'Finish Questions 💌':'Next 💗'}</button>`;
   }else{
     html+=`<textarea id="freeAnswer" placeholder="Type your answer here… 💕">${selectedAnswer}</textarea>
